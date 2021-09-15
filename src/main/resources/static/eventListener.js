@@ -38,8 +38,5 @@ function disconnectEventSource(eventSource) {
 
 document.querySelector('#register-event-btn')
 .addEventListener('click', function (event) {
-  const xmlHttp = new XMLHttpRequest()
-  xmlHttp.onreadystatechange = function() {}
-  xmlHttp.open("GET", registerEventURL, true)
-  xmlHttp.send(null)
+  fetch(registerEventURL).then(r => {})
 })
