@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component
 
 @Component
 class EventListener(
-    private val eventEmitter: EventEmitter
+    private val eventEmittersOrchestrator: EventEmittersOrchestrator
 ) {
 
     @EventListener
     fun handleEvent(event: Event) {
-        eventEmitter.send("message: ${event.date}")
+        eventEmittersOrchestrator.send("message: ${event.date}")
     }
 }
